@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Enhanced CS Tabbed Web Browser", "Enhanced CS Tabbed Web Browser\Enhanced CS Tabbed Web Browser.csproj", "{66DE4440-493E-431E-8B37-9105821DCEE0}"
 EndProject
 Global
