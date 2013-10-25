@@ -483,6 +483,24 @@ namespace Enhanced_CS_Tabbed_Web_Browser
         /// </remarks>
         private void GetFavouritesForDirectory(DirectoryInfo di, TreeNode dirNode)
         {
+            foreach (DirectoryInfo dirInfo in di.GetDirectories())
+            {
+                TreeNode newNode = new TreeNode();
+                newNode.Text = dirInfo.Name;
+                newNode.Tag = dirInfo.FullName;
+
+                if (dirNode == null)
+                {
+                    this.favouritesTreeView.Nodes.Add(newNode);
+                }
+                else
+                {
+                    dirNode.Nodes.Add(newNode);
+                }
+
+                newNode.Nodes.Add("*");
+            }
+
             foreach (FileInfo fileInfo in di.GetFiles())
             {
                 result = GetPrivateProfileString("InternetShortcut", "URL", "", sb, (uint)sb.Capacity, fileInfo.FullName);
@@ -511,16 +529,6 @@ namespace Enhanced_CS_Tabbed_Web_Browser
         private void GetFavourites()
         {
             this.favouritesTreeView.Nodes.Clear();
-
-            foreach (string dirName in Directory.GetDirectories(Environment.GetFolderPath(Environment.SpecialFolder.Favorites)))
-            {
-                DirectoryInfo dirInfo = new DirectoryInfo(dirName);
-                TreeNode newNode = new TreeNode();
-                newNode.Text = dirInfo.Name;
-                newNode.Tag = dirInfo.FullName;
-                this.favouritesTreeView.Nodes.Add(newNode);
-                newNode.Nodes.Add("*");
-            }
 
             GetFavouritesForDirectory(new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.Favorites)), null);
         }

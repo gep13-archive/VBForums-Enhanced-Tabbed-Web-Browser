@@ -412,6 +412,21 @@ Public Class MainWindow
     ''' Uses a PInvoke call to GetPrivateProfileString to get Favourite information
     ''' </remarks>
     Private Sub GetFavouritesForDirectory(ByVal di As DirectoryInfo, ByVal dirNode As TreeNode)
+
+        For Each dirInfo As DirectoryInfo In di.GetDirectories()
+            Dim NewNode As New TreeNode()
+            NewNode.Text = dirInfo.Name
+            NewNode.Tag = dirInfo.FullName
+
+            If dirNode Is Nothing Then
+                FavouritesTreeView.Nodes.Add(NewNode)
+            Else
+                dirNode.Nodes.Add(NewNode)
+            End If
+
+            NewNode.Nodes.Add("*")
+        Next
+
         For Each fileinfo As FileInfo In di.GetFiles()
             result = GetPrivateProfileString("InternetShortcut", "URL", "", sb, sb.Capacity, fileinfo.FullName)
             If result > 0 Then
@@ -429,20 +444,11 @@ Public Class MainWindow
     End Sub
 
     ''' <summary>
-    ''' Initial call used to populate FavouritesTreeView with top level Favourites and Directories
+    ''' Clear the FavouritesTree and then perfom initial pass at populating favourites and top level folders
     ''' </summary>
     ''' <remarks></remarks>
     Private Sub GetFavourites()
         Me.FavouritesTreeView.Nodes.Clear()
-
-        For Each dirName As String In Directory.GetDirectories(Environment.GetFolderPath(Environment.SpecialFolder.Favorites))
-            Dim dirInfo As New DirectoryInfo(dirName)
-            Dim NewNode As New TreeNode()
-            NewNode.Text = dirInfo.Name
-            NewNode.Tag = dirInfo.FullName
-            FavouritesTreeView.Nodes.Add(NewNode)
-            NewNode.Nodes.Add("*")
-        Next
 
         GetFavouritesForDirectory(New DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.Favorites)), Nothing)
     End Sub
