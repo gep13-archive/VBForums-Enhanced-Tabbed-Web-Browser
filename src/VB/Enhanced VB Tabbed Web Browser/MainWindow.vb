@@ -78,6 +78,8 @@ Public Class MainWindow
             Me.currentBrowser.Navigate(My.Settings.HomePage)
         End If
 
+        Me.FavouritesTreeView.ImageList = Me.iconImageList
+
         Me.GetFavourites()
     End Sub
 
@@ -417,6 +419,7 @@ Public Class MainWindow
             Dim NewNode As New TreeNode()
             NewNode.Text = dirInfo.Name
             NewNode.Tag = dirInfo.FullName
+            NewNode.ImageIndex = 0
 
             If dirNode Is Nothing Then
                 FavouritesTreeView.Nodes.Add(NewNode)
@@ -434,6 +437,8 @@ Public Class MainWindow
                 myFav.Text = Path.GetFileNameWithoutExtension(fileinfo.FullName)
                 myFav.Url = New Uri(sb.ToString())
                 myFav.Tag = fileinfo.FullName
+                myFav.ImageIndex = 1
+
                 If dirNode Is Nothing Then
                     FavouritesTreeView.Nodes.Add(myFav)
                 Else

@@ -97,6 +97,8 @@ namespace Enhanced_CS_Tabbed_Web_Browser
             this.currentBrowser.DocumentTitleChanged += new EventHandler(currentBrowser_DocumentTitleChanged);
             this.currentBrowser.DocumentCompleted += new WebBrowserDocumentCompletedEventHandler(currentBrowser_DocumentCompleted);
 
+            this.favouritesTreeView.ImageList = this.iconImageList;
+
             this.GetFavourites();
         }
 
@@ -488,6 +490,7 @@ namespace Enhanced_CS_Tabbed_Web_Browser
                 TreeNode newNode = new TreeNode();
                 newNode.Text = dirInfo.Name;
                 newNode.Tag = dirInfo.FullName;
+                newNode.ImageIndex = 0;
 
                 if (dirNode == null)
                 {
@@ -510,6 +513,7 @@ namespace Enhanced_CS_Tabbed_Web_Browser
                     myFav.Text = Path.GetFileNameWithoutExtension(fileInfo.FullName);
                     myFav.Url = new Uri(sb.ToString());
                     myFav.DirectoryPath = fileInfo.FullName;
+                    myFav.ImageIndex = 1;
 
                     if (dirNode == null)
                     {

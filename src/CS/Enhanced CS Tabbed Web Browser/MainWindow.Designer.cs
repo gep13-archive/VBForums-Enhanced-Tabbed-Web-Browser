@@ -74,6 +74,7 @@
             this.goButton = new System.Windows.Forms.ToolStripButton();
             this.toolbar = new System.Windows.Forms.ToolStrip();
             this.backButton = new System.Windows.Forms.ToolStripButton();
+            this.iconImageList = new System.Windows.Forms.ImageList(this.components);
             openMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             exitMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             homeButton = new System.Windows.Forms.ToolStripButton();
@@ -176,9 +177,9 @@
             this.favouritesTreeView.Name = "favouritesTreeView";
             this.favouritesTreeView.Size = new System.Drawing.Size(286, 463);
             this.favouritesTreeView.TabIndex = 0;
-            this.favouritesTreeView.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.favouritesTreeView_NodeMouseDoubleClick);
             this.favouritesTreeView.BeforeExpand += new System.Windows.Forms.TreeViewCancelEventHandler(this.favouritesTreeView_BeforeExpand);
             this.favouritesTreeView.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.favouritesTreeView_NodeMouseClick);
+            this.favouritesTreeView.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.favouritesTreeView_NodeMouseDoubleClick);
             // 
             // favouritesContextMenu
             // 
@@ -511,6 +512,13 @@
             this.backButton.Text = "Back";
             this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
+            // iconImageList
+            // 
+            this.iconImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("iconImageList.ImageStream")));
+            this.iconImageList.TransparentColor = System.Drawing.Color.Transparent;
+            this.iconImageList.Images.SetKeyName(0, "folder.png");
+            this.iconImageList.Images.SetKeyName(1, "world_link.png");
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -581,7 +589,6 @@
         internal System.Windows.Forms.ContextMenuStrip favouritesContextMenu;
         internal System.Windows.Forms.ToolStripMenuItem DeleteFavouriteToolStripMenuItem;
         internal System.Windows.Forms.ToolStripMenuItem EditFavouriteToolStripMenuItem;
-
-
+        private System.Windows.Forms.ImageList iconImageList;
     }
 }

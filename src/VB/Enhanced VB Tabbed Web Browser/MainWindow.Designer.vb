@@ -22,7 +22,7 @@ Partial Class MainWindow
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container
+        Me.components = New System.ComponentModel.Container()
         Dim toolbarSeparator1 As System.Windows.Forms.ToolStripSeparator
         Dim newTabButton As System.Windows.Forms.ToolStripButton
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainWindow))
@@ -37,60 +37,61 @@ Partial Class MainWindow
         Dim homeButton As System.Windows.Forms.ToolStripButton
         Dim toolsMenuItem As System.Windows.Forms.ToolStripMenuItem
         Dim optionsMenuItem As System.Windows.Forms.ToolStripMenuItem
-        Me.newTabMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.closeTabMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.refreshMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.stopMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.backMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.forwardMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.homeMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.goButton = New System.Windows.Forms.ToolStripButton
-        Me.mainMenu = New System.Windows.Forms.MenuStrip
-        Me.toolbar = New System.Windows.Forms.ToolStrip
-        Me.backButton = New System.Windows.Forms.ToolStripButton
-        Me.forwardButton = New System.Windows.Forms.ToolStripButton
-        Me.refreshButton = New System.Windows.Forms.ToolStripButton
-        Me.stopButton = New System.Windows.Forms.ToolStripButton
-        Me.favouritesButton = New System.Windows.Forms.ToolStripSplitButton
-        Me.AddToFavouritesMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.closeTabButton = New System.Windows.Forms.ToolStripButton
-        Me.addressCombo = New System.Windows.Forms.ToolStripComboBox
-        Me.statusbar = New System.Windows.Forms.StatusStrip
-        Me.browserStatusTextLabel = New System.Windows.Forms.ToolStripStatusLabel
-        Me.pageLoadProgress = New System.Windows.Forms.ToolStripProgressBar
-        Me.MainSplitContainer = New System.Windows.Forms.SplitContainer
-        Me.FavouritesTabControl = New System.Windows.Forms.TabControl
-        Me.FavouritesTabPage = New System.Windows.Forms.TabPage
-        Me.FavouritesTreeView = New System.Windows.Forms.TreeView
+        Me.newTabMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.closeTabMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.refreshMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.stopMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.backMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.forwardMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.homeMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.goButton = New System.Windows.Forms.ToolStripButton()
+        Me.mainMenu = New System.Windows.Forms.MenuStrip()
+        Me.toolbar = New System.Windows.Forms.ToolStrip()
+        Me.backButton = New System.Windows.Forms.ToolStripButton()
+        Me.forwardButton = New System.Windows.Forms.ToolStripButton()
+        Me.refreshButton = New System.Windows.Forms.ToolStripButton()
+        Me.stopButton = New System.Windows.Forms.ToolStripButton()
+        Me.favouritesButton = New System.Windows.Forms.ToolStripSplitButton()
+        Me.AddToFavouritesMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.closeTabButton = New System.Windows.Forms.ToolStripButton()
+        Me.addressCombo = New System.Windows.Forms.ToolStripComboBox()
+        Me.statusbar = New System.Windows.Forms.StatusStrip()
+        Me.browserStatusTextLabel = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.pageLoadProgress = New System.Windows.Forms.ToolStripProgressBar()
+        Me.MainSplitContainer = New System.Windows.Forms.SplitContainer()
+        Me.FavouritesTabControl = New System.Windows.Forms.TabControl()
+        Me.FavouritesTabPage = New System.Windows.Forms.TabPage()
+        Me.FavouritesTreeView = New System.Windows.Forms.TreeView()
         Me.favouritesContextMenu = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.DeleteFavouriteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.EditFavouriteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.FeedsTabPage = New System.Windows.Forms.TabPage
-        Me.HistoryTabPage = New System.Windows.Forms.TabPage
-        Me.tabs = New Enhanced_VB_Tabbed_Web_Browser.WebBrowserTabControl
-        toolbarSeparator1 = New System.Windows.Forms.ToolStripSeparator
-        newTabButton = New System.Windows.Forms.ToolStripButton
-        fileMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        openMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        fileMenuSeparator1 = New System.Windows.Forms.ToolStripSeparator
-        exitMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        viewMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        historyMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        toolbarSeparator2 = New System.Windows.Forms.ToolStripSeparator
-        addressLabel = New System.Windows.Forms.ToolStripLabel
-        homeButton = New System.Windows.Forms.ToolStripButton
-        toolsMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        optionsMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.mainMenu.SuspendLayout()
-        Me.toolbar.SuspendLayout()
-        Me.statusbar.SuspendLayout()
-        Me.MainSplitContainer.Panel1.SuspendLayout()
-        Me.MainSplitContainer.Panel2.SuspendLayout()
-        Me.MainSplitContainer.SuspendLayout()
-        Me.FavouritesTabControl.SuspendLayout()
-        Me.FavouritesTabPage.SuspendLayout()
-        Me.favouritesContextMenu.SuspendLayout()
-        Me.SuspendLayout()
+        Me.DeleteFavouriteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EditFavouriteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FeedsTabPage = New System.Windows.Forms.TabPage()
+        Me.HistoryTabPage = New System.Windows.Forms.TabPage()
+        Me.tabs = New Enhanced_VB_Tabbed_Web_Browser.WebBrowserTabControl()
+        Me.iconImageList = New System.Windows.Forms.ImageList(Me.components)
+        toolbarSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        newTabButton = New System.Windows.Forms.ToolStripButton()
+        fileMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        openMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        fileMenuSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        exitMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        viewMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        historyMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        toolbarSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        addressLabel = New System.Windows.Forms.ToolStripLabel()
+        homeButton = New System.Windows.Forms.ToolStripButton()
+        toolsMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        optionsMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mainMenu.SuspendLayout
+        Me.toolbar.SuspendLayout
+        Me.statusbar.SuspendLayout
+        Me.MainSplitContainer.Panel1.SuspendLayout
+        Me.MainSplitContainer.Panel2.SuspendLayout
+        Me.MainSplitContainer.SuspendLayout
+        Me.FavouritesTabControl.SuspendLayout
+        Me.FavouritesTabPage.SuspendLayout
+        Me.favouritesContextMenu.SuspendLayout
+        Me.SuspendLayout
         '
         'toolbarSeparator1
         '
@@ -100,7 +101,7 @@ Partial Class MainWindow
         'newTabButton
         '
         newTabButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        newTabButton.Image = CType(resources.GetObject("newTabButton.Image"), System.Drawing.Image)
+        newTabButton.Image = CType(resources.GetObject("newTabButton.Image"),System.Drawing.Image)
         newTabButton.ImageTransparentColor = System.Drawing.Color.Magenta
         newTabButton.Name = "newTabButton"
         newTabButton.Size = New System.Drawing.Size(23, 22)
@@ -116,25 +117,25 @@ Partial Class MainWindow
         '
         'newTabMenuItem
         '
-        Me.newTabMenuItem.Image = CType(resources.GetObject("newTabMenuItem.Image"), System.Drawing.Image)
+        Me.newTabMenuItem.Image = CType(resources.GetObject("newTabMenuItem.Image"),System.Drawing.Image)
         Me.newTabMenuItem.Name = "newTabMenuItem"
-        Me.newTabMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.N), System.Windows.Forms.Keys)
+        Me.newTabMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.N),System.Windows.Forms.Keys)
         Me.newTabMenuItem.Size = New System.Drawing.Size(164, 22)
         Me.newTabMenuItem.Text = "&New Tab"
         '
         'openMenuItem
         '
-        openMenuItem.Enabled = False
+        openMenuItem.Enabled = false
         openMenuItem.Name = "openMenuItem"
-        openMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.O), System.Windows.Forms.Keys)
+        openMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.O),System.Windows.Forms.Keys)
         openMenuItem.Size = New System.Drawing.Size(164, 22)
         openMenuItem.Text = "&Open..."
         AddHandler openMenuItem.Click, AddressOf Me.openMenuItem_Click
         '
         'closeTabMenuItem
         '
-        Me.closeTabMenuItem.Enabled = False
-        Me.closeTabMenuItem.Image = CType(resources.GetObject("closeTabMenuItem.Image"), System.Drawing.Image)
+        Me.closeTabMenuItem.Enabled = false
+        Me.closeTabMenuItem.Image = CType(resources.GetObject("closeTabMenuItem.Image"),System.Drawing.Image)
         Me.closeTabMenuItem.Name = "closeTabMenuItem"
         Me.closeTabMenuItem.Size = New System.Drawing.Size(164, 22)
         Me.closeTabMenuItem.Text = "&Close Tab"
@@ -146,7 +147,7 @@ Partial Class MainWindow
         '
         'exitMenuItem
         '
-        exitMenuItem.Image = CType(resources.GetObject("exitMenuItem.Image"), System.Drawing.Image)
+        exitMenuItem.Image = CType(resources.GetObject("exitMenuItem.Image"),System.Drawing.Image)
         exitMenuItem.Name = "exitMenuItem"
         exitMenuItem.Size = New System.Drawing.Size(164, 22)
         exitMenuItem.Text = "E&xit"
@@ -161,17 +162,17 @@ Partial Class MainWindow
         '
         'refreshMenuItem
         '
-        Me.refreshMenuItem.Enabled = False
-        Me.refreshMenuItem.Image = CType(resources.GetObject("refreshMenuItem.Image"), System.Drawing.Image)
+        Me.refreshMenuItem.Enabled = false
+        Me.refreshMenuItem.Image = CType(resources.GetObject("refreshMenuItem.Image"),System.Drawing.Image)
         Me.refreshMenuItem.Name = "refreshMenuItem"
-        Me.refreshMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.R), System.Windows.Forms.Keys)
+        Me.refreshMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.R),System.Windows.Forms.Keys)
         Me.refreshMenuItem.Size = New System.Drawing.Size(154, 22)
         Me.refreshMenuItem.Text = "&Refresh"
         '
         'stopMenuItem
         '
-        Me.stopMenuItem.Enabled = False
-        Me.stopMenuItem.Image = CType(resources.GetObject("stopMenuItem.Image"), System.Drawing.Image)
+        Me.stopMenuItem.Enabled = false
+        Me.stopMenuItem.Image = CType(resources.GetObject("stopMenuItem.Image"),System.Drawing.Image)
         Me.stopMenuItem.Name = "stopMenuItem"
         Me.stopMenuItem.Size = New System.Drawing.Size(154, 22)
         Me.stopMenuItem.Text = "&Stop"
@@ -185,27 +186,27 @@ Partial Class MainWindow
         '
         'backMenuItem
         '
-        Me.backMenuItem.Enabled = False
-        Me.backMenuItem.Image = CType(resources.GetObject("backMenuItem.Image"), System.Drawing.Image)
+        Me.backMenuItem.Enabled = false
+        Me.backMenuItem.Image = CType(resources.GetObject("backMenuItem.Image"),System.Drawing.Image)
         Me.backMenuItem.Name = "backMenuItem"
-        Me.backMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Left), System.Windows.Forms.Keys)
+        Me.backMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Left),System.Windows.Forms.Keys)
         Me.backMenuItem.Size = New System.Drawing.Size(179, 22)
         Me.backMenuItem.Text = "&Back"
         '
         'forwardMenuItem
         '
-        Me.forwardMenuItem.Enabled = False
-        Me.forwardMenuItem.Image = CType(resources.GetObject("forwardMenuItem.Image"), System.Drawing.Image)
+        Me.forwardMenuItem.Enabled = false
+        Me.forwardMenuItem.Image = CType(resources.GetObject("forwardMenuItem.Image"),System.Drawing.Image)
         Me.forwardMenuItem.Name = "forwardMenuItem"
-        Me.forwardMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Right), System.Windows.Forms.Keys)
+        Me.forwardMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Right),System.Windows.Forms.Keys)
         Me.forwardMenuItem.Size = New System.Drawing.Size(179, 22)
         Me.forwardMenuItem.Text = "For&ward"
         '
         'homeMenuItem
         '
-        Me.homeMenuItem.Image = CType(resources.GetObject("homeMenuItem.Image"), System.Drawing.Image)
+        Me.homeMenuItem.Image = CType(resources.GetObject("homeMenuItem.Image"),System.Drawing.Image)
         Me.homeMenuItem.Name = "homeMenuItem"
-        Me.homeMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.H), System.Windows.Forms.Keys)
+        Me.homeMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.H),System.Windows.Forms.Keys)
         Me.homeMenuItem.Size = New System.Drawing.Size(179, 22)
         Me.homeMenuItem.Text = "H&ome"
         '
@@ -223,7 +224,7 @@ Partial Class MainWindow
         'homeButton
         '
         homeButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        homeButton.Image = CType(resources.GetObject("homeButton.Image"), System.Drawing.Image)
+        homeButton.Image = CType(resources.GetObject("homeButton.Image"),System.Drawing.Image)
         homeButton.ImageTransparentColor = System.Drawing.Color.Magenta
         homeButton.Name = "homeButton"
         homeButton.Size = New System.Drawing.Size(23, 22)
@@ -239,7 +240,7 @@ Partial Class MainWindow
         '
         'optionsMenuItem
         '
-        optionsMenuItem.Image = CType(resources.GetObject("optionsMenuItem.Image"), System.Drawing.Image)
+        optionsMenuItem.Image = CType(resources.GetObject("optionsMenuItem.Image"),System.Drawing.Image)
         optionsMenuItem.Name = "optionsMenuItem"
         optionsMenuItem.Size = New System.Drawing.Size(125, 22)
         optionsMenuItem.Text = "&Options..."
@@ -247,7 +248,7 @@ Partial Class MainWindow
         '
         'goButton
         '
-        Me.goButton.Image = CType(resources.GetObject("goButton.Image"), System.Drawing.Image)
+        Me.goButton.Image = CType(resources.GetObject("goButton.Image"),System.Drawing.Image)
         Me.goButton.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.goButton.Name = "goButton"
         Me.goButton.Size = New System.Drawing.Size(42, 22)
@@ -275,8 +276,8 @@ Partial Class MainWindow
         'backButton
         '
         Me.backButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.backButton.Enabled = False
-        Me.backButton.Image = CType(resources.GetObject("backButton.Image"), System.Drawing.Image)
+        Me.backButton.Enabled = false
+        Me.backButton.Image = CType(resources.GetObject("backButton.Image"),System.Drawing.Image)
         Me.backButton.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.backButton.Name = "backButton"
         Me.backButton.Size = New System.Drawing.Size(23, 22)
@@ -285,8 +286,8 @@ Partial Class MainWindow
         'forwardButton
         '
         Me.forwardButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.forwardButton.Enabled = False
-        Me.forwardButton.Image = CType(resources.GetObject("forwardButton.Image"), System.Drawing.Image)
+        Me.forwardButton.Enabled = false
+        Me.forwardButton.Image = CType(resources.GetObject("forwardButton.Image"),System.Drawing.Image)
         Me.forwardButton.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.forwardButton.Name = "forwardButton"
         Me.forwardButton.Size = New System.Drawing.Size(23, 22)
@@ -295,8 +296,8 @@ Partial Class MainWindow
         'refreshButton
         '
         Me.refreshButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.refreshButton.Enabled = False
-        Me.refreshButton.Image = CType(resources.GetObject("refreshButton.Image"), System.Drawing.Image)
+        Me.refreshButton.Enabled = false
+        Me.refreshButton.Image = CType(resources.GetObject("refreshButton.Image"),System.Drawing.Image)
         Me.refreshButton.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.refreshButton.Name = "refreshButton"
         Me.refreshButton.Size = New System.Drawing.Size(23, 22)
@@ -305,8 +306,8 @@ Partial Class MainWindow
         'stopButton
         '
         Me.stopButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.stopButton.Enabled = False
-        Me.stopButton.Image = CType(resources.GetObject("stopButton.Image"), System.Drawing.Image)
+        Me.stopButton.Enabled = false
+        Me.stopButton.Image = CType(resources.GetObject("stopButton.Image"),System.Drawing.Image)
         Me.stopButton.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.stopButton.Name = "stopButton"
         Me.stopButton.Size = New System.Drawing.Size(23, 22)
@@ -330,8 +331,8 @@ Partial Class MainWindow
         'closeTabButton
         '
         Me.closeTabButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.closeTabButton.Enabled = False
-        Me.closeTabButton.Image = CType(resources.GetObject("closeTabButton.Image"), System.Drawing.Image)
+        Me.closeTabButton.Enabled = false
+        Me.closeTabButton.Image = CType(resources.GetObject("closeTabButton.Image"),System.Drawing.Image)
         Me.closeTabButton.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.closeTabButton.Name = "closeTabButton"
         Me.closeTabButton.Size = New System.Drawing.Size(23, 22)
@@ -339,7 +340,7 @@ Partial Class MainWindow
         '
         'addressCombo
         '
-        Me.addressCombo.AutoSize = False
+        Me.addressCombo.AutoSize = false
         Me.addressCombo.Name = "addressCombo"
         Me.addressCombo.Size = New System.Drawing.Size(510, 23)
         '
@@ -356,14 +357,14 @@ Partial Class MainWindow
         '
         Me.browserStatusTextLabel.Name = "browserStatusTextLabel"
         Me.browserStatusTextLabel.Size = New System.Drawing.Size(882, 17)
-        Me.browserStatusTextLabel.Spring = True
+        Me.browserStatusTextLabel.Spring = true
         Me.browserStatusTextLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'pageLoadProgress
         '
         Me.pageLoadProgress.Name = "pageLoadProgress"
         Me.pageLoadProgress.Size = New System.Drawing.Size(100, 16)
-        Me.pageLoadProgress.Visible = False
+        Me.pageLoadProgress.Visible = false
         '
         'MainSplitContainer
         '
@@ -403,7 +404,7 @@ Partial Class MainWindow
         Me.FavouritesTabPage.Size = New System.Drawing.Size(291, 469)
         Me.FavouritesTabPage.TabIndex = 0
         Me.FavouritesTabPage.Text = "Favourites"
-        Me.FavouritesTabPage.UseVisualStyleBackColor = True
+        Me.FavouritesTabPage.UseVisualStyleBackColor = true
         '
         'FavouritesTreeView
         '
@@ -440,7 +441,7 @@ Partial Class MainWindow
         Me.FeedsTabPage.Size = New System.Drawing.Size(291, 469)
         Me.FeedsTabPage.TabIndex = 1
         Me.FeedsTabPage.Text = "Feeds"
-        Me.FeedsTabPage.UseVisualStyleBackColor = True
+        Me.FeedsTabPage.UseVisualStyleBackColor = true
         '
         'HistoryTabPage
         '
@@ -450,7 +451,7 @@ Partial Class MainWindow
         Me.HistoryTabPage.Size = New System.Drawing.Size(291, 469)
         Me.HistoryTabPage.TabIndex = 2
         Me.HistoryTabPage.Text = "History"
-        Me.HistoryTabPage.UseVisualStyleBackColor = True
+        Me.HistoryTabPage.UseVisualStyleBackColor = true
         '
         'tabs
         '
@@ -461,35 +462,42 @@ Partial Class MainWindow
         Me.tabs.Size = New System.Drawing.Size(594, 495)
         Me.tabs.TabIndex = 3
         '
+        'iconImageList
+        '
+        Me.iconImageList.ImageStream = CType(resources.GetObject("iconImageList.ImageStream"),System.Windows.Forms.ImageListStreamer)
+        Me.iconImageList.TransparentColor = System.Drawing.Color.Transparent
+        Me.iconImageList.Images.SetKeyName(0, "folder.png")
+        Me.iconImageList.Images.SetKeyName(1, "world_link.png")
+        '
         'MainWindow
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(897, 566)
         Me.Controls.Add(Me.MainSplitContainer)
         Me.Controls.Add(Me.statusbar)
         Me.Controls.Add(Me.toolbar)
         Me.Controls.Add(Me.mainMenu)
-        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Icon = CType(resources.GetObject("$this.Icon"),System.Drawing.Icon)
         Me.MainMenuStrip = Me.mainMenu
         Me.Name = "MainWindow"
         Me.Text = "Enhanced VB.Net Tabbed Web Browser"
-        Me.mainMenu.ResumeLayout(False)
-        Me.mainMenu.PerformLayout()
-        Me.toolbar.ResumeLayout(False)
-        Me.toolbar.PerformLayout()
-        Me.statusbar.ResumeLayout(False)
-        Me.statusbar.PerformLayout()
-        Me.MainSplitContainer.Panel1.ResumeLayout(False)
-        Me.MainSplitContainer.Panel2.ResumeLayout(False)
-        Me.MainSplitContainer.ResumeLayout(False)
-        Me.FavouritesTabControl.ResumeLayout(False)
-        Me.FavouritesTabPage.ResumeLayout(False)
-        Me.favouritesContextMenu.ResumeLayout(False)
-        Me.ResumeLayout(False)
-        Me.PerformLayout()
+        Me.mainMenu.ResumeLayout(false)
+        Me.mainMenu.PerformLayout
+        Me.toolbar.ResumeLayout(false)
+        Me.toolbar.PerformLayout
+        Me.statusbar.ResumeLayout(false)
+        Me.statusbar.PerformLayout
+        Me.MainSplitContainer.Panel1.ResumeLayout(false)
+        Me.MainSplitContainer.Panel2.ResumeLayout(false)
+        Me.MainSplitContainer.ResumeLayout(false)
+        Me.FavouritesTabControl.ResumeLayout(false)
+        Me.FavouritesTabPage.ResumeLayout(false)
+        Me.favouritesContextMenu.ResumeLayout(false)
+        Me.ResumeLayout(false)
+        Me.PerformLayout
 
-    End Sub
+End Sub
     Private WithEvents backButton As System.Windows.Forms.ToolStripButton
     Private WithEvents forwardButton As System.Windows.Forms.ToolStripButton
     Private WithEvents refreshButton As System.Windows.Forms.ToolStripButton
@@ -521,5 +529,5 @@ Partial Class MainWindow
     Friend WithEvents EditFavouriteToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents FeedsTabPage As System.Windows.Forms.TabPage
     Friend WithEvents HistoryTabPage As System.Windows.Forms.TabPage
-
+    Friend WithEvents iconImageList As ImageList
 End Class
