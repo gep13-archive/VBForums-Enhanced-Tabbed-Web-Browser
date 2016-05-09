@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
+using System.IO;
+using System.Net;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
-using System.Runtime.InteropServices;
-using System.IO;
 
 namespace Enhanced_CS_Tabbed_Web_Browser
 {
@@ -48,6 +45,7 @@ namespace Enhanced_CS_Tabbed_Web_Browser
         /// Initialized with a value of 500, it is expected that Favourite Url's will not be longer than this
         /// </remarks>
         private StringBuilder sb = new StringBuilder(500);
+        private StringBuilder sb1 = new StringBuilder(500);
 
         /// <summary>
         /// The <b>Integer</b> to hold the result of the PInvoke calls
@@ -427,7 +425,7 @@ namespace Enhanced_CS_Tabbed_Web_Browser
         {
             if(MessageBox.Show(String.Format("Are you sure you want to delete {0}", this.favouritesTreeView.SelectedNode.Text), "Deletion Check", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
-                if ((this.favouritesTreeView.SelectedNode) is FavouriteTreeNode) 
+                if ((this.favouritesTreeView.SelectedNode) is FavouriteTreeNode)
                 {
                     string favouritePath = ((FavouriteTreeNode)this.favouritesTreeView.SelectedNode).DirectoryPath.ToString();
                     if (File.Exists(favouritePath)) {
@@ -491,6 +489,7 @@ namespace Enhanced_CS_Tabbed_Web_Browser
                 newNode.Text = dirInfo.Name;
                 newNode.Tag = dirInfo.FullName;
                 newNode.ImageIndex = 0;
+                newNode.SelectedImageIndex = 0;
 
                 if (dirNode == null)
                 {
@@ -504,6 +503,8 @@ namespace Enhanced_CS_Tabbed_Web_Browser
                 newNode.Nodes.Add("*");
             }
 
+            var imageKeyIndex = 0;
+
             foreach (FileInfo fileInfo in di.GetFiles())
             {
                 result = GetPrivateProfileString("InternetShortcut", "URL", "", sb, (uint)sb.Capacity, fileInfo.FullName);
@@ -514,6 +515,22 @@ namespace Enhanced_CS_Tabbed_Web_Browser
                     myFav.Url = new Uri(sb.ToString());
                     myFav.DirectoryPath = fileInfo.FullName;
                     myFav.ImageIndex = 1;
+                    myFav.SelectedImageIndex = 1;
+
+                    // attempt to find an icon for the favourite
+                    result = GetPrivateProfileString("InternetShortcut", "IconFile", "", sb1, (uint)sb.Capacity, fileInfo.FullName);
+                    if (result > 0)
+                    {
+                        var image = this.LoadImage(sb1.ToString());
+                        if (image != null)
+                        {
+                            this.iconImageList.Images.Add(string.Format("fav{0}", imageKeyIndex), image);
+                            myFav.ImageKey = string.Format("fav{0}", imageKeyIndex);
+                            myFav.SelectedImageKey = string.Format("fav{0}", imageKeyIndex);
+                        }
+
+                        imageKeyIndex++;
+                    }
 
                     if (dirNode == null)
                     {
@@ -535,6 +552,25 @@ namespace Enhanced_CS_Tabbed_Web_Browser
             this.favouritesTreeView.Nodes.Clear();
 
             GetFavouritesForDirectory(new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.Favorites)), null);
+        }
+
+        private Image LoadImage(string url)
+        {
+            try
+            {
+                // Create a new WebClient instance.
+                WebClient myWebClient = new WebClient();
+                using (var myStream = myWebClient.OpenRead(url))
+                {
+                    var bmp = new Bitmap(myStream);
+
+                    return bmp;
+                }
+            }
+            catch
+            {
+                return null;
+            }
         }
 
         #endregion

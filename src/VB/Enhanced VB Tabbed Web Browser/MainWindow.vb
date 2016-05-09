@@ -1,4 +1,5 @@
 Imports System.IO
+Imports System.Net
 Imports System.Runtime.InteropServices
 Imports System.Text
 
@@ -38,6 +39,7 @@ Public Class MainWindow
     ''' Initialized with a value of 500, it is expected that Favourite Url's will not be longer than this
     ''' </remarks>
     Private sb As New StringBuilder(500)
+    Private sb1 As New StringBuilder(500)
     ''' <summary>
     ''' The <b>Integer</b> to hold the result of the PInvoke calls
     ''' </summary>
@@ -420,6 +422,7 @@ Public Class MainWindow
             NewNode.Text = dirInfo.Name
             NewNode.Tag = dirInfo.FullName
             NewNode.ImageIndex = 0
+            NewNode.SelectedImageIndex = 0
 
             If dirNode Is Nothing Then
                 FavouritesTreeView.Nodes.Add(NewNode)
@@ -430,6 +433,8 @@ Public Class MainWindow
             NewNode.Nodes.Add("*")
         Next
 
+        Dim imageKeyIndex As Int32 = 0
+
         For Each fileinfo As FileInfo In di.GetFiles()
             result = GetPrivateProfileString("InternetShortcut", "URL", "", sb, sb.Capacity, fileinfo.FullName)
             If result > 0 Then
@@ -438,6 +443,21 @@ Public Class MainWindow
                 myFav.Url = New Uri(sb.ToString())
                 myFav.Tag = fileinfo.FullName
                 myFav.ImageIndex = 1
+                myFav.SelectedImageIndex = 1
+
+                ' Attempt to find an icon for the favourite
+                result = GetPrivateProfileString("InternetShortcut", "IconFile", "", sb1, sb1.Capacity, fileinfo.FullName)
+                If result > 0 Then
+                    Dim image As Image = Me.LoadImage(sb1.ToString())
+
+                    If image IsNot Nothing Then
+                        Me.iconImageList.Images.Add(String.Format("fav{0}", imageKeyIndex), image)
+                        myFav.ImageKey = String.Format("fav{0}", imageKeyIndex)
+                        myFav.SelectedImageKey = String.Format("fav{0}", imageKeyIndex)
+                    End If
+
+                    imageKeyIndex += 1
+                End If
 
                 If dirNode Is Nothing Then
                     FavouritesTreeView.Nodes.Add(myFav)
@@ -457,6 +477,20 @@ Public Class MainWindow
 
         GetFavouritesForDirectory(New DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.Favorites)), Nothing)
     End Sub
+
+    Private Function LoadImage(url As String) As Image
+        Try
+            ' Create a new WebClient instance.
+            Dim myWebClient As New WebClient()
+            Using myStream = myWebClient.OpenRead(url)
+                Dim bmp = New Bitmap(myStream)
+
+                Return bmp
+            End Using
+        Catch
+            Return Nothing
+        End Try
+    End Function
 
 #End Region 'Methods
 
